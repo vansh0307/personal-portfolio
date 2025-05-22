@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubNest - Your College Club Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-feather-alt"></i> ClubNest
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#clubs">Clubs</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#notifications">Notifications</a></li>         
+            <li><button class="login-btn" onclick="toggleModal('loginModal')">Login</button></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to ClubNest</h1>
+                <p>Discover, Join, and Engage with Amazing College Clubs</p>
+                <button class="cta-button" onclick="scrollToDepartments()">Explore Clubs</button>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="intro" class="intro-section">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>Explore Our Vibrant Community</h2>
+                    <p>MIT ADT University offers a diverse range of departments, each with its unique clubs and activities. Choose your department below to discover exciting opportunities!</p>
+                </div>
+                <div class="intro-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Departments</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Active Clubs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Students</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to explore departments</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Departments Section -->
+        <section id="departments" class="departments-section">
+            <h2>Our Departments</h2>
+            <div class="departments-container">
+                <div class="department-item">
+                    <div class="department-circle">
+                        <img src="images/soc.jpg" alt="School of Computing">
+                    </div>
+                    <h3>SOC</h3>
+                    <p>School of Computing</p>
+                </div>
+                <div class="department-item">
+                    <div class="department-circle">
+                        <img src="images/iod.jpg" alt="Institute of Design">
+                    </div>
+                    <h3>IOD</h3>
+                    <p>Institute of Design</p>
+                </div>
+                <div class="department-item">
+                    <div class="department-circle">
+                        <img src="images/sofa.jpg" alt="School of Fine Arts">
+                    </div>
+                    <h3>SOFA</h3>
+                    <p>School of Fine Arts</p>
+                </div>
+                <div class="department-item">
+                    <div class="department-circle">
+                        <img src="images/isbj.jpg" alt="Indian School of Business & Journalism">
+                    </div>
+                    <h3>ISBJ</h3>
+                    <p>School of Business & Journalism</p>
+                </div>
+                <div class="department-item">
+                    <div class="department-circle">
+                        <img src="images/mitcom.jpg" alt="MIT School of Communication">
+                    </div>
+                    <h3>MITCOM</h3>
+                    <p>School of Communication</p>
+                </div>
+                <div class="department-item">
+                    <div class="department-circle">
+                        <img src="images/manet.jpg" alt="Media Arts & Network Technology">
+                    </div>
+                    <h3>MANET</h3>
+                    <p>Media Arts & Network Technology</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clubs Section -->
+        <section id="clubs" class="clubs-section">
+            <h2>Available Clubs</h2>
+            <div class="clubs-tabs">
+                <button class="tab-btn active" data-category="all">All Clubs</button>
+                <button class="tab-btn" data-category="tech">Technical</button>
+                <button class="tab-btn" data-category="art">Arts & Culture</button>
+                <button class="tab-btn" data-category="dance">Dance & Music</button>
+                <button class="tab-btn" data-category="sports">Sports</button>
+            </div>
+            <div class="clubs-container">
+                <!-- Technical Clubs -->
+                <div class="club-category" id="tech-clubs">
+                    <div class="club-card" data-category="tech" data-club-id="1">
+                        <div class="club-image">
+                            <img src="images/GeekforGeeks.webp" alt="GeeksforGeeks Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-code"></i></div>
+                            <h3>GeeksforGeeks Club</h3>
+                            <p>Join the largest student coding community. Practice DSA, participate in contests, and enhance your coding skills.</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                    <div class="club-card" data-category="tech" data-club-id="2">
+                        <div class="club-image">
+                            <img src="images/swift coding.png" alt="Swift Coding Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fab fa-swift"></i></div>
+                            <h3>Swift Coding Club</h3>
+                            <p>Learn iOS app development, Swift programming, and build amazing mobile applications.</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                    <div class="club-card" data-category="tech" data-club-id="3">
+                        <div class="club-image">
+                            <img src="images/ieee.webp" alt="IEEE Student Branch">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-microchip"></i></div>
+                            <h3>IEEE Student Branch</h3>
+                            <p>Be part of the world's largest technical professional organization. Access global resources and networking opportunities.</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                    <div class="club-card" data-category="tech" data-club-id="4">
+                        <div class="club-image">
+                            <img src="images/codechef.jpg" alt="CodeChef Campus Chapter">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h3>CodeChef Campus Chapter</h3>
+                            <p>Master competitive programming, solve challenging problems, and compete in global contests.</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arts & Culture Clubs -->
+                <div class="club-category" id="art-clubs">
+                    <div class="club-card" data-category="art">
+                        <div class="club-image">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Art Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-palette"></i></div>
+                            <h3>Art Club</h3>
+                            <p>Express yourself through various art forms</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                    <div class="club-card" data-category="art">
+                        <div class="club-image">
+                            <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Drama Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-theater-masks"></i></div>
+                            <h3>Drama Club</h3>
+                            <p>Explore the world of theater and acting</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                    <div class="club-card" data-category="art">
+                        <div class="club-image">
+                            <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Photography Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-camera"></i></div>
+                            <h3>Photography Club</h3>
+                            <p>Capture moments and learn photography</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dance & Music Clubs -->
+                <div class="club-category" id="dance-clubs">
+                    <div class="club-card" data-category="dance">
+                        <div class="club-image">
+                            <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Music Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-music"></i></div>
+                            <h3>Music Club</h3>
+                            <p>Create and perform music together</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                    <div class="club-card" data-category="dance">
+                        <div class="club-image">
+                            <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dance Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-dancing"></i></div>
+                            <h3>Dance Club</h3>
+                            <p>Express yourself through dance</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                    <div class="club-card" data-category="dance">
+                        <div class="club-image">
+                            <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Band Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-drum"></i></div>
+                            <h3>Band Club</h3>
+                            <p>Join our college band ensemble</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports Clubs -->
+                <div class="club-category" id="sports-clubs">
+                    <div class="club-card" data-category="sports">
+                        <div class="club-image">
+                            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Football Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-futbol"></i></div>
+                            <h3>Football Club</h3>
+                            <p>Join our college football team</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                    <div class="club-card" data-category="sports">
+                        <div class="club-image">
+                            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Basketball Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-basketball-ball"></i></div>
+                            <h3>Basketball Club</h3>
+                            <p>Be part of our basketball team</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                    <div class="club-card" data-category="sports">
+                        <div class="club-image">
+                            <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Table Tennis Club">
+                        </div>
+                        <div class="club-content">
+                            <div class="club-icon"><i class="fas fa-table-tennis"></i></div>
+                            <h3>Table Tennis Club</h3>
+                            <p>Practice and compete in table tennis</p>
+                            <button class="join-btn">Join Club</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="events-section">
+            <h2>Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Coding Competition">
+                        <div class="event-date">
+                            <span class="date">15</span>
+                            <span class="month">MAR</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Code Sprint 2024</h3>
+                        <p class="event-description">Annual coding competition hosted by GeeksforGeeks Club. Compete with the best coders and win exciting prizes!</p>
+                        <div class="event-details">
+                            <span><i class="fas fa-clock"></i> 9:00 AM - 6:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Lab 301, SOC Building</span>
+                        </div>
+                        <div class="event-stats">
+                            <div class="seats-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%;"></div>
+                                </div>
+                                <span class="seats-text">75 seats remaining</span>
+                            </div>
+                        </div>
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="IEEE Workshop">
+                        <div class="event-date">
+                            <span class="date">20</span>
+                            <span class="month">MAR</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>AI/ML Workshop</h3>
+                        <p class="event-description">Hands-on workshop on Artificial Intelligence and Machine Learning fundamentals by IEEE Student Branch.</p>
+                        <div class="event-details">
+                            <span><i class="fas fa-clock"></i> 10:00 AM - 4:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Seminar Hall, MANET</span>
+                        </div>
+                        <div class="event-stats">
+                            <div class="seats-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 40%;"></div>
+                                </div>
+                                <span class="seats-text">120 seats remaining</span>
+                            </div>
+                        </div>
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Swift Club Event">
+                        <div class="event-date">
+                            <span class="date">25</span>
+                            <span class="month">MAR</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>iOS App Development Bootcamp</h3>
+                        <p class="event-description">Three-day intensive bootcamp on iOS app development using Swift and SwiftUI.</p>
+                        <div class="event-details">
+                            <span><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Innovation Hub, IOD</span>
+                        </div>
+                        <div class="event-stats">
+                            <div class="seats-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="seats-text">15 seats remaining</span>
+                            </div>
+                        </div>
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CodeChef Contest">
+                        <div class="event-date">
+                            <span class="date">30</span>
+                            <span class="month">MAR</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Competitive Programming Contest</h3>
+                        <p class="event-description">Monthly programming contest by CodeChef Campus Chapter. Sharpen your problem-solving skills!</p>
+                        <div class="event-details">
+                            <span><i class="fas fa-clock"></i> 2:00 PM - 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Virtual Event</span>
+                        </div>
+                        <div class="event-stats">
+                            <div class="seats-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 30%;"></div>
+                                </div>
+                                <span class="seats-text">Unlimited seats</span>
+                            </div>
+                        </div>
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notifications Section -->
+        <section id="notifications" class="notifications-section">
+            <h2>Your Notifications</h2>
+            <div class="notifications-list">
+                <!-- Notifications will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="toggleModal('registerModal')">Register</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal('registerModal')">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Club Details Modal -->
+    <div id="clubDetailsModal" class="modal">
+        <div class="modal-content club-details-modal">
+            <span class="close" onclick="toggleModal('clubDetailsModal')">&times;</span>
+            <!-- Content will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Club Application Modal -->
+    <div id="clubApplicationModal" class="modal">
+        <div class="modal-content application-modal">
+            <span class="close" onclick="toggleModal('clubApplicationModal')">&times;</span>
+            <div class="application-header">
+                <h2>Club Application</h2>
+                <p>Join our community and be part of something amazing!</p>
+            </div>
+            <form id="clubApplicationForm" class="application-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name <span class="required-star">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <div class="error-message">Please enter your full name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Student ID <span class="required-star">*</span></label>
+                        <input type="text" id="studentId" name="studentId" required>
+                        <div class="error-message">Please enter your student ID</div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email <span class="required-star">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message">Please enter a valid email address</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number <span class="required-star">*</span></label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                        <div class="error-message">Please enter your phone number</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Year of Study <span class="required-star">*</span></label>
+                    <select id="yearOfStudy" name="yearOfStudy" required>
+                        <option value="">Select Year</option>
+                        <option value="1">First Year</option>
+                        <option value="2">Second Year</option>
+                        <option value="3">Third Year</option>
+                        <option value="4">Fourth Year</option>
+                    </select>
+                    <div class="error-message">Please select your year of study</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Areas of Interest <span class="required-star">*</span></label>
+                    <textarea id="interests" name="interests" rows="3" 
+                        placeholder="List your relevant interests and skills" required></textarea>
+                    <div class="hint">Tell us about your interests, skills, and what you're passionate about.</div>
+                    <div class="error-message">Please share your interests</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Why do you want to join this club? <span class="required-star">*</span></label>
+                    <textarea id="whyJoin" name="whyJoin" rows="4" 
+                        placeholder="Tell us why you're interested in joining and what you hope to contribute" required></textarea>
+                    <div class="hint">Be specific about your motivations and what you hope to achieve.</div>
+                    <div class="error-message">Please tell us why you want to join</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Previous Experience</label>
+                    <textarea id="experience" name="experience" rows="3" 
+                        placeholder="Describe any relevant experience you have"></textarea>
+                    <div class="hint">Include any relevant projects, activities, or achievements.</div>
+                </div>
+
+                <div class="form-group file-upload">
+                    <label>Upload CV (PDF only)</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf" class="file-input">
+                    <div class="file-label">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Drag and drop your CV here</span>
+                        <span>or click to browse</span>
+                    </div>
+                    <div class="file-name"></div>
+                    <div class="hint">Maximum file size: 5MB</div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ClubNest. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
